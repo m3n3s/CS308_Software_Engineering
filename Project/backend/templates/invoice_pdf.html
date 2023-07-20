@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Invoice</title>
+  </head>
+
+  <body>
+    <div>
+	<tr>
+					<td>
+						<table>
+							<h1>Justicket</h1>
+							<p>Sabanci University <br/>
+Istanbul, Turkey</p>
+						</table>
+					</td>
+				</tr>
+      <table>
+        <tr>
+          <td><b>Event Name</b></td>
+          <td><b>Ticket Quantity</b></td>
+          <td><b>Unit Price</b></td>
+		  <td><b>Total Price</b></td>
+        </tr>
+
+        {% for product in products %}
+        <tr>
+          <td>
+            {{product.name}}
+          </td>
+
+          <td>
+            {{product.quantity}}
+          </td>
+
+          <td>
+            {{product.price}} TL
+          </td>
+		  
+		  <td>
+            {{product.producttotal}} TL
+          </td>
+        </tr>
+        {% endfor %}
+
+        <tr>
+          <td></td>
+		  <td></td>
+		  <td></td>
+		  <br>
+		  <br>
+
+          <td style="text-align:center">
+            <b>Grand Total:</b> {{grandTotal}} TL
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
